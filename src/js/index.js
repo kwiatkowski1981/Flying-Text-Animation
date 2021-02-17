@@ -8,11 +8,13 @@ import '../scss/main.scss';
 
 console.log('HELLO 🚀')
 
+import anime from 'animejs/lib/anime.es.js';
+
 
 const text = document.querySelector('.text');
 text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
 
-const animation = anime.timeline({  
+const animation = anime.timeline({
     targets: '.text span',
     easing: 'easeInOutExpo',
     loop: true,
