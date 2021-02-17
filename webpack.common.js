@@ -6,6 +6,8 @@ module.exports = {
   entry: {
     index: "./src/js/index.js",
     another: "./src/js/another.js",
+    anime: "./src/js/anime.min.js"
+
   },
   output: {
     filename: "[name].[hash:8].js",
@@ -79,14 +81,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/index.html",
       inject: true,
-      chunks: ["index"],
+      chunks: ["index", "another", "anime"],
       filename: "index.html",
     }),
-    new HtmlWebpackPlugin({
-      template: "./src/pages/another.html",
-      inject: true,
-      chunks: ["index", "another"],
-      filename: "another.html",
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: "./src/pages/another.html",
+    //   inject: true,
+    //   chunks: ["index"],
+    //   filename: "another.html",
+    // }),
   ],
 };
